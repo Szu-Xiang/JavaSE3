@@ -9,6 +9,17 @@ package com.itheima05_自定义类型应用.p01作为参数和返回值类型;
  */
 public class Test {
     public static void main(String[] args) {
+        Human h = getHuman();
+        showHuman(h);
+    }
 
+    public static void showHuman(Human h) {
+        System.out.println(h.name);
+    }
+
+    public static Human getHuman() {
+        Human h = new Human();
+        h.name = "张三";
+        return h;
     }
 }
