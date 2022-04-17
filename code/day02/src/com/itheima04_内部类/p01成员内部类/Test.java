@@ -15,7 +15,9 @@ package com.itheima04_内部类.p01成员内部类;
         		}
 	}
 3.使用格式
-	外部类名.内部类名 对象名 = new 外部类型().new 内部类型();
+
+    外部类名 外部对象名 = new 外部类名()
+	外部类名.内部类名 对象名 = 外部对象名.new 内部类型();
 4.成员内部类访问特点
     内部类可以直接访问外部类的成员，包括私有成员。
     外部类要访问内部类的成员，必须要建立内部类的对象。
@@ -25,6 +27,15 @@ package com.itheima04_内部类.p01成员内部类;
  */
 public class Test {
     public static void main(String[] args) {
+
+        //外部类名 外部对象名 = new 外部类名()
+        //外部类名.内部类名 对象名 = 外部对象名.new 内部类型();
+        Person p = new Person();
+        Person.Heart h = p.new Heart();
+
+        h.jump();
+        p.setLive(false);
+        h.jump();
 
     }
 }
