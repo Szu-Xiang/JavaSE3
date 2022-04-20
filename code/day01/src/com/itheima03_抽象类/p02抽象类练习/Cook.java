@@ -1,6 +1,6 @@
 package com.itheima03_抽象类.p02抽象类练习;
 
-public class Cook extends Employee{
+public class Cook extends Employee {
     public Cook() {
 
     }

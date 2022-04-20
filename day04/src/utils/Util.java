@@ -57,10 +57,13 @@ public class Util {
 
         Date birDate = null;
         try {
+            //String -> Date 类型转换
             birDate = sdf.parse(birthday);
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        //Date -> Calendar  将Date类型的生日转换为Calendar类型
+        assert birDate != null;
         birCal.setTime(birDate);
 
         Calendar nowCal = Calendar.getInstance();
@@ -76,7 +79,7 @@ public class Util {
 
             age = nowYear - birYear;
 
-            //（如果当前的月 < 生日的月,
+            //（如果当前的月 < 生日的月, 或者月相等，但是日期比当前日期早，则减一岁
             if (nowMonth < birMonth || (nowMonth == birMonth) && (nowDay < birDay)) {
                 age--;
             }
@@ -96,5 +99,10 @@ public class Util {
         }
         return index;
     }
+
+
+
+
 }
+
 

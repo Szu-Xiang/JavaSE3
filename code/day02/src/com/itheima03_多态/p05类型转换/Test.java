@@ -30,10 +30,11 @@ public class Test {
     public static void main(String[] args) {
 
         //匿名对象，无变量指向的对象
-        showAnimal(new Cat());
+        showAnimal(new Dog());
     }
 
     public static void showAnimal(Animal a) {
+
         a.eat();
         //父类的引用不能使用子类特有的方法
         //转换方式： 向下👇转型：目标类型 变量名 = （目标类型） 对象
@@ -41,6 +42,7 @@ public class Test {
         //解决方法：
         //          变量名 instanceof 类型
 
+        //向下转型
         if(a instanceof Cat) {
             Cat c = (Cat) a;
             c.catchMouse();
@@ -49,8 +51,8 @@ public class Test {
             d.lookHouse();
         }
 
-
-
-
     }
+
+
+
 }

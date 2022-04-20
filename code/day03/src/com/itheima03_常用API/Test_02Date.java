@@ -1,5 +1,7 @@
 package com.itheima03_常用API;
 
+import java.util.Date;
+
 /*
 1.概述:
     标准基准时间:【历元(epoch):1970年1月1日00:00:00 GMT)】,也称为时间原点。
@@ -15,5 +17,19 @@ package com.itheima03_常用API;
 public class Test_02Date {
     public static void main(String[] args) {
 
+        //创建当前时间对象
+        Date d = new Date();
+        System.out.println(d);
+
+        long time = System.currentTimeMillis();
+        d.setTime(time);
+        System.out.println(d);
+
+        //获取毫秒值
+        System.out.println(d.getTime());
+
+        //修改毫秒值
+        d.setTime(1000L);
+        System.out.println(d);
     }
 }

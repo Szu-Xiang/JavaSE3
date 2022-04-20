@@ -19,6 +19,7 @@ public class Test {
     public static void main(String[] args) {
 
         MyInterImpl mii = new MyInterImpl();
+//        MyInterImpl mii2 = new MyInterImpl();
 
         //多实现同名内容的访问规则:
         //1. 静态常量只能通过接口名调用
@@ -27,6 +28,13 @@ public class Test {
 
         //2.抽象方法
         mii.abstractMethod();
+
+        //3.默认方法
+        mii.defaultMethod();
+
+        //4.静态方法,只能接口名调用
+        MyInterB.staticMethod();
+        MyInter1.staticMethod();
 
     }
 }

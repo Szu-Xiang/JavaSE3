@@ -1,6 +1,4 @@
 package com.itheima05_自定义类型应用.p01作为参数和返回值类型;
 
-public abstract class Human {
-    String name;
-
+public class Person extends Human{
 }

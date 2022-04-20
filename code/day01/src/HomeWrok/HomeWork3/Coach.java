@@ -1,4 +1,4 @@
-package com.HomeWork3;
+package HomeWrok.HomeWork3;
 
 public class Coach extends Person{
 

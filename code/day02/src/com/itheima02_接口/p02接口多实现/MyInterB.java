@@ -1,7 +1,8 @@
 package com.itheima02_接口.p02接口多实现;
 
 public interface MyInterB {
-    public static final int NUM = 10;
+
+    public static final int NUM = 100;
 
     public abstract void abstractMethod();
 

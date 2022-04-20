@@ -1,4 +1,4 @@
-package com.HomeWork4;
+package HomeWrok.HomeWork4;
 
 public class Employee extends Person{
 

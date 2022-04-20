@@ -16,6 +16,7 @@ package com.itheima03_常用API;
 */
 public class Test_05Math {
     public static void main(String[] args) {
-
+        int a = Math.abs(-5);
+        System.out.println(a);
     }
 }

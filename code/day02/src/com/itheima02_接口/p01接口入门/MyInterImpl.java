@@ -4,11 +4,11 @@ public class MyInterImpl implements MyInter {
 
     @Override
     public void abstractMethod() {
-        System.out.println("重写接口中抽象方法");
+        System.out.println("重写的抽象方法");
     }
 
-
     public void defaultMethod2() {
+
         System.out.println("重写的默认方法");
     }
 

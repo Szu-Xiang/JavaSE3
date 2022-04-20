@@ -39,21 +39,31 @@ public class Test {
 
         //返回值多态的使用
         Animal a3 = getAnimal("猫");
+        a3.eat();
+
+        Animal a4 = getAnimal("狗");
+        a4.eat();
 
     }
 
+    //形参多态的使用：修饰符 返回值 方法名 (父类名 变量名)
+
+    public static void showAnimal(Animal a) {
+
+        a.eat();
+    }
+
     public static void showCat(Cat c) {
+
         c.eat();
     }
 
     public static void showDog(Dog d) {
+
         d.eat();
     }
 
-    public static void showAnimal(Animal a) {
-        a.eat();
-    }
-
+    //返回值多态的使用
     public static Animal getAnimal(String type) {
 
         Animal a = null;

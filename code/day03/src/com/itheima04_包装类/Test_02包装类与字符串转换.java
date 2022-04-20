@@ -14,5 +14,12 @@ String转换成基本类型
 public class Test_02包装类与字符串转换 {
     public static void main(String[] args) {
 
+        String s4 = "40";
+        int i4 = Integer.parseInt(s4);
+
+        String s5 = "abc";
+        s5.charAt(0);
+        System.out.println(s5.charAt(0));
+
     }
 }

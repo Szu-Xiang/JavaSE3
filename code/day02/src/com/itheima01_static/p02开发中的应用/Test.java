@@ -11,9 +11,13 @@ package com.itheima01_static.p02开发中的应用;
  */
 public class Test {
     public static void main(String[] args) {
+
         int[] arr = {1,2,3,4,5};
         int max = Util.getMax(arr);
+
         System.out.println(max);
+
+        System.out.println(Util.PI);
 
     }
 }

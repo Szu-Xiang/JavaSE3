@@ -1,4 +1,4 @@
-package com.HomeWork;
+package HomeWrok.HomeWork;
 
 public class Electrical {
     private String brand;

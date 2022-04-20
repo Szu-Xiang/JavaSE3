@@ -15,8 +15,44 @@ package com.itheima03_常用API;
     public void set(int field,int value)  设置某个字段的值
     public void add(int field,int amount)  为某个字段增加/减少指定的值
 */
+
+import java.util.Calendar;
+
 public class Test_04Calendar {
     public static void main(String[] args) {
 
+        //获取Calendar子类对象
+        Calendar c = Calendar.getInstance();
+        //获取时间信息
+        showCalendar(c);
+
+        //设置字段的值
+        c.set(Calendar.MONTH, 7);//0-11代表月份
+        //showCalendar(c);
+
+        c.add(Calendar.MONTH,1);
+        //showCalendar(c);
+
+    }
+
+    public static void showCalendar(Calendar c) {
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+        int second = c.get(Calendar.SECOND);
+
+        month++;
+
+        System.out.println(year + "年" +month + "月" + day + "日"
+         + " " + hour + "：" + minute + ":" + second);
+
+        //展示星期
+        int week = c.get(Calendar.DAY_OF_WEEK);
+
+        String[] weeks = {"星期天", "星期一","星期二", "星期三", "星期四", "星期五", "星期六" };
+        week--;
+        System.out.println(weeks[week]);
     }
 }

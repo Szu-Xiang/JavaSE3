@@ -1,5 +1,8 @@
 package com.itheima03_常用API;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /*
 1.概述:
     java.math.BigDecimal  为浮点数提供精准计算的类
@@ -27,5 +30,32 @@ public class Test_08BigDecimal {
         System.out.println(1.0 - 0.32);
         System.out.println(1.015 * 100);
         System.out.println(1.301 / 100);
+
+        //BigDecimal(String val)
+        BigDecimal b1 = new BigDecimal("0.09");
+        BigDecimal b2 = new BigDecimal("0.01");
+
+        //加法
+        System.out.println(b1.add(b2));
+
+        BigDecimal b3 = new BigDecimal("1.0");
+        BigDecimal b4 = new BigDecimal("0.32");
+
+        //减法
+        System.out.println(b3.subtract(b4));
+
+        BigDecimal b5 = new BigDecimal("1.015");
+        BigDecimal b6 = new BigDecimal("100");
+
+        //乘法
+        System.out.println(b5.multiply(b6));
+
+        BigDecimal b7 = new BigDecimal("10");
+        BigDecimal b8 = new BigDecimal("3");
+
+        //除法
+        System.out.println(b7.divide(b8,2, RoundingMode.HALF_UP));
+
+
     }
 }

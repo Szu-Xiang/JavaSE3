@@ -22,6 +22,7 @@ public class Test {
         //2.成员方法(*) 编译看左边，运行看右边
         f.method();//运行看右边，子类的method
 
+
         //3.静态方法
         f.staticMethod();
 

@@ -12,5 +12,22 @@ package com.itheima03_常用API;
 public class Test_06System {
     public static void main(String[] args) {
 
+        long startTime = System.currentTimeMillis();
+
+        doSomeThing();
+
+        long endTime = System.currentTimeMillis();
+
+        long time = endTime - startTime;
+
+        System.out.println(time + "毫秒");
+
     }
+
+    public static void doSomeThing() {
+        for (int i = 0; i < 10000; i++) {
+            System.out.println("nihao");
+        }
+    }
+
 }

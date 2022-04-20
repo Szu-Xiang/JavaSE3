@@ -24,8 +24,6 @@ public class Test {
         Cook c = new Cook("C0001","zhangsan",12000);
         Manager m = new Manager("M0001", "lisi", 15000);
 
-
-
         c.show();
         c.work();
 

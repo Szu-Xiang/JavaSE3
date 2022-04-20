@@ -1,6 +1,7 @@
 package com.itheima02_接口.p03继承并实现;
 
 public interface MyInter {
+
     public static final int NUM = 999;
 
     public abstract void abstractMethod();

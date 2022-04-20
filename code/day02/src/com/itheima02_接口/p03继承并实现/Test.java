@@ -15,12 +15,14 @@ package com.itheima02_接口.p03继承并实现;
 
  */
 public class Test {
+
     public static void main(String[] args) {
         //同名内容的访问规则
         Zi z = new Zi();
         //1.静态常量
-        System.out.println(Fu.NUM);
-        System.out.println(MyInter.NUM);
+        System.out.println(Fu.NUM);//889
+        System.out.println(MyInter.NUM);//999
+
 
         //2.抽象方法
         z.abstractMethod();

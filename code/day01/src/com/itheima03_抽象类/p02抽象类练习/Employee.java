@@ -63,9 +63,11 @@ public abstract class Employee {
         this.salary = salary;
     }
 
+    //抽象方法
     public abstract void work();
 
     public void show() {
+
         System.out.println("id为：" + id + ", " + "姓名为：" + name + ", " + "工资为：" + salary);
     }
 }

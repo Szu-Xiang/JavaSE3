@@ -7,6 +7,7 @@ public abstract class Dog {
 
     //吼叫类
     public void Cry() {
+
         System.out.println("汪汪giao");
     }
 

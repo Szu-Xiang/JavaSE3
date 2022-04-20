@@ -29,5 +29,25 @@ package com.itheima03_常用API;
 public class Test_01Object {
     public static void main(String[] args) {
 
+        Person p = new Person();
+
+        //Student继承Object
+        Student s = new Student();
+        System.out.println(s.toString());
+        System.out.println(s.equals(s));
+
+        //重写toString
+        Animal a = new Animal();
+        System.out.println(a);// null ,, 0，打印的是toString方法返回的结果
+
+        //重写eauals
+        Animal a2 = new Animal("H",4);
+        Animal a3 = new Animal("H",4);
+        Animal a4 = new Animal("H",5);
+        Animal a5 = new Animal(null,5);
+
+        System.out.println(a2.equals(a3));
+        System.out.println(a4.equals(a3));
+        System.out.println(a5.equals(a3));
     }
 }

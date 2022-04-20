@@ -10,6 +10,7 @@ package com.itheima04_包装类;
     | ------| ---- | ----- | ------- | ---- | ----- | ------ | --------- | ------- |
     | 包装类 | Byte | Short | Integer | Long | Float | Double | Character | Boolean |
     由于分类较多，接下来的讲解统一以Integer为例类。
+
 构造方法
     public Integer(int value)  根据 int 值创建 Integer 对象(过时)
     public Integer(String s)  根据 String 值创建 Integer 对象(过时)
@@ -25,9 +26,32 @@ package com.itheima04_包装类;
     自动装箱：基本类型传递给包装类型
     自动拆箱：包装类型传递给基本类型
  */
+
 public class Test_01基本使用 {
     public static void main(String[] args) {
 
+        int i1 = 10;
+        Integer ii1 = new Integer(i1);
+        System.out.println(ii1);
+
+        int i3 = 20;
+        Integer ii3 = Integer.valueOf(i3);
+
+        String s4 = "30";
+        Integer ii4 = Integer.valueOf(s4);
+
+        System.out.println(ii3);
+        System.out.println(ii4);
+
+        //自动装箱
+        int i6 = 60;
+        Integer ii6 = i6;
+
+        //自动拆箱
+        Integer ii7 = new Integer(70);
+        int i7 = ii7;
+
     }
+
 }
 

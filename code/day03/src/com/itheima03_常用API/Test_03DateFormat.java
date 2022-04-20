@@ -1,5 +1,9 @@
 package com.itheima03_常用API;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /*
 1.概述:
     java.text.DateFormat 该类可以使得在Date对象与String对象之间进行来回转换.
@@ -14,7 +18,34 @@ package com.itheima03_常用API;
     public Date parse(String source)：(解析)按照指定的格式，把String对象转换为Date对象。
 */
 public class Test_03DateFormat {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
+
+        //Date --> String 格式化用format
+        Date d = new Date();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        String result1 = sdf1.format(d);
+        System.out.println(result1);
+
+        //String --> Date 解析用parse
+        String time = "2022年2月24日 10:10:10";
+        //SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        Date result2 = sdf1.parse(time);
+        System.out.println(result2);
+
+
+//        try {
+//            Date result2 = sdf.parse(time);
+//            System.out.println(result2);
+//
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+
+
+
+
 
     }
 }
+
+
