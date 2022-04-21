@@ -1,5 +1,7 @@
 package com.itheima03_List;
 
+import java.util.LinkedList;
+
 /*
 java.util.ArrayList 数组存储结构集合； 特点：查询快,增删慢,线程不安全
 java.util.LinkedList链表存储结构集合； 特点：查询慢,增删快,线程不安全
@@ -18,6 +20,21 @@ LinkedList集合特有方法(了解)
  */
 public class Test_03常用子类 {
     public static void main(String[] args) {
+        LinkedList<String> list = new LinkedList<>();
+        list.add("a");
+        list.add("c");
+        list.add("b");
 
+        list.addFirst("d");
+        System.out.println(list);
+
+        System.out.println(list.removeFirst());
+        System.out.println(list);
+
+        list.pop();
+        System.out.println(list);
+
+        list.push("f");
+        System.out.println(list);
     }
 }

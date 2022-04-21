@@ -1,5 +1,8 @@
 package com.itheima01_Generic;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /*
 1.介绍：泛型(Generic)是JDK5之后新增语法，可以在类、接口或方法中预支地使用未知的类型。
 2.应用
@@ -15,6 +18,14 @@ package com.itheima01_Generic;
  */
 public class Test_01泛型入门 {
     public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList();
+        list.add("abc");
+//        list.add(true);
+//        list.add(100);
 
+        for (int i = 0; i < list.size(); i++) {
+            String s = (String)list.get(i);
+            System.out.println(s);
+        }
     }
 }

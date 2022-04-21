@@ -35,6 +35,23 @@ package com.itheima01_Generic;
  */
 public class Test_02泛型的定义 {
     public static void main(String[] args) {
+        //1.含有泛型的类，定义变量的时候，指定变量的类型
+        GenericClass<String> gc = new GenericClass<>();
+        gc.method1("abc");
+
+//        GenericClass<Object> gc2 = new GenericClass<>();
+//        gc2.method1(33.3);
+
+        GenericInterImpl<Object> oji = new GenericInterImpl<>();
+        oji.method1(30);
+        oji.method1("dfw");
+
+
+        //含有泛型的方法
+//        GenericMethod gm = new GenericMethod();
+//        gm.method1("abc");
+//        String s = gm.method2();
+//        System.out.println(s);
 
     }
 }

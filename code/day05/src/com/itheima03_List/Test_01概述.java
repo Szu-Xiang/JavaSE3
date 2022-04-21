@@ -1,5 +1,8 @@
 package com.itheima03_List;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 1.什么是List
 	java.util.List接口继承自Collection接口，是单列集合的一个重要分支，实现了List接口的类称为List集合。
@@ -13,6 +16,13 @@ package com.itheima03_List;
  */
 public class Test_01概述 {
     public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("c");
+        list.add("b");
+        System.out.println(list);
 
+        list.remove(1);
+        System.out.println(list);
     }
 }

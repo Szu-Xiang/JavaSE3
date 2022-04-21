@@ -1,5 +1,9 @@
 package com.itheima02_Collection;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+
 /*
 集合概述
     1.什么是集合
@@ -20,11 +24,11 @@ package com.itheima02_Collection;
     	java.util.List:有序单列集合接口
     		|------java.util.ArrayList 	数组结构，查询快,增删慢,线程不安全
     		|------java.util.LinkedList    	链表结构，查询慢,增删快,线程不安全
-    		|------java.util.Vector    	数组结构，查询较快,增删慢,线程安全
+    		|------java.util.Vector    	数组结构，查询较快,增删慢,线程安全（过时了）
     	java.util.Set : 无序单列集合接口
     		|------java.util.HashSet	哈希结构，不可排序
     			|------java.util.LinkedHashSet	链表+哈希表结构，有序
-    			|------java.util.TreeSet	二叉树结构，可排序
+    		|------java.util.TreeSet	二叉树结构，可排序
 
 特点
 	List:元素有索引，元素有序(先进先出)、元素可重复
@@ -34,8 +38,7 @@ package com.itheima02_Collection;
     1.构造方法
     	由于Collection是一个接口，不能创建对象，需要使用其子类ArrayList等类型来创建对象。
     2.添加数据
-    	public boolean add(E e)：  把给定的对象添加到当前集合中。
-        public boolean add(E e)：  把给定的对象添加到当前集合中
+    	public boolean add(E e)：  把给定的对象添加到当前集合中
         public boolean remove(E e): 把给定的对象在当前集合中删除
         public boolean contains(Object obj): 判断当前集合是否包含给定的对象
         public boolean isEmpty(): 判断当前集合是否为空
@@ -46,6 +49,35 @@ package com.itheima02_Collection;
  */
 public class Test_01基本使用 {
     public static void main(String[] args) {
+        //体现出Collection中的方法
+        Collection<String> c = new ArrayList<>();
+
+        //public boolean add(E e)：  把给定的对象添加到当前集合中。
+        c.add("a");
+        c.add("b");
+        c.add("c");
+        System.out.println("add:" + c);
+
+        //public boolean remove(E e): 把给定的对象在当前集合中删除
+        c.remove("b");
+        System.out.println("remove:" + c);
+
+        //public boolean contains(Object obj): 判断当前集合是否包含给定的对象
+        System.out.println(c.contains("b"));
+
+        //public boolean isEmpty(): 判断当前集合是否为空
+        System.out.println(c.isEmpty());
+
+        //public int size(): 返回集合中元素的个数
+        System.out.println(c.size());
+
+        //public Object[] toArray(): 把集合中的元素，存储到数组中
+        Object[] objs = c.toArray();
+        System.out.println(Arrays.toString(objs));
+
+        //public void clear():清空集合中所有的元素
+        c.clear();
+        System.out.println(c);
 
     }
 }

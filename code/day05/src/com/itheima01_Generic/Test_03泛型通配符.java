@@ -1,5 +1,8 @@
 package com.itheima01_Generic;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /*
 泛型通配符
     1.概述
@@ -27,6 +30,28 @@ package com.itheima01_Generic;
  */
 public class Test_03泛型通配符 {
     public static void main(String[] args) {
+        ArrayList<Sun> listSun = new ArrayList<>();
+        ArrayList<Fu> listFu = new ArrayList<>();
+        ArrayList<Zi> listZi = new ArrayList<>();
+
+        ArrayList<?> list2;
+        list2 = listFu;
+
+        //泛型的上限 类或其子类
+        ArrayList<? extends Zi> list3;
+        list3 = listSun;
+        list3 = listZi;
+        //报错，父类不包含list3中
+        //list4 = listFu;
+
+        //泛型的下限，类或其父类
+        ArrayList<? super Zi> list4;
+        list4 = listFu;
+        list4 = listZi;
+
+    }
+
+    public static void show (ArrayList<? super Zi> list) {
 
     }
 }

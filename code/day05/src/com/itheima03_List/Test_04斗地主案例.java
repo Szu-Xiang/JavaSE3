@@ -1,5 +1,8 @@
 package com.itheima03_List;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /*
 需求:
     按照斗地主的规则，完成造牌发牌看牌的动作。
@@ -18,5 +21,67 @@ package com.itheima03_List;
 public class Test_04斗地主案例 {
     public static void main(String[] args) {
 
+        //创建牌盒
+        ArrayList<String> pokerBox = new ArrayList<>();
+
+        //造牌，将牌放进牌盒
+        //定义花色数组 - 定义牌号数组 - 循环嵌套获取所有的牌
+
+        //定义花色数组
+        String[] colors = {"♠️", "♥️", "♣️", "♦️"};
+        //定义牌号数组
+        String[] numbers = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+
+        //循环嵌套获取所有的牌
+        for (String color : colors) {
+            for (String number : numbers) {
+                //获取了一张牌
+                String poker = color + number;
+                //添加到牌盒中
+                pokerBox.add(poker);
+            }
+        }
+
+        pokerBox.add("Big 🃏");
+        pokerBox.add("Small 🃏");
+
+        //System.out.println(pokerBox);
+        /*
+            洗牌(明天讲)
+         */
+        Collections.shuffle(pokerBox);
+
+        /*
+            发牌
+         */
+        //创建玩家
+        ArrayList<String> player1 = new ArrayList<>();
+        ArrayList<String> player2 = new ArrayList<>();
+        ArrayList<String> player3 = new ArrayList<>();
+        ArrayList<String> dipai = new ArrayList<>();
+
+        //给三个人和底牌发牌
+        //i的有效范围：0～53
+        for (int i = 0; i < pokerBox.size(); i++) {
+            String poker = pokerBox.get(i);
+            if(i >= 51) {
+                //发给底牌
+                dipai.add(poker);
+            } else {
+                //给玩家的牌
+                if(i % 3 ==0) {
+                    player1.add(poker);
+                } else if(i % 3 ==1) {
+                    player2.add(poker);
+                } else {
+                    player3.add(poker);
+                }
+            }
+        }
+
+        System.out.println("东方不败：" + player1);
+        System.out.println("任我行：" + player2);
+        System.out.println("令狐冲：" + player3);
+        System.out.println("底牌：" + dipai);
     }
 }
