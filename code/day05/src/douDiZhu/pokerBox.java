@@ -72,8 +72,8 @@ public class pokerBox {
         //看牌
         System.out.println("周润发" + player1);
         System.out.println("刘德华" + player2);
-        System.out.println("郭富城" + player3);
-        System.out.println(dipai);
+        System.out.println("古天乐" + player3);
+        System.out.println("底牌" + dipai);
 
     }
 }
