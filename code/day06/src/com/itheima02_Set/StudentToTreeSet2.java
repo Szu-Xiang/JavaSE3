@@ -11,7 +11,7 @@ public class StudentToTreeSet2 {
 
     @Override
     public String toString() {
-        return "StudentToTreeSet1{" +
+        return "StudentToTreeSet2{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';

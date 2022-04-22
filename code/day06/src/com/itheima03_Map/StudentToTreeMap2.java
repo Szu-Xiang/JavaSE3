@@ -1,6 +1,8 @@
 package com.itheima03_Map;
 
-public class StudentToTreeMap2 {
+import com.itheima02_Set.StudentToTreeSet2;
+
+public class StudentToTreeMap2 implements Comparable<StudentToTreeMap2> {
     String name;
     int age;
 
@@ -15,5 +17,10 @@ public class StudentToTreeMap2 {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public int compareTo(StudentToTreeMap2 o) {
+        return 0;
     }
 }

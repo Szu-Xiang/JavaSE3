@@ -1,5 +1,10 @@
 package com.itheima01_Collections;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 /*
 1.概述
 	public interface Comparator<T>  定义比较对象规则的接口。
@@ -16,15 +21,39 @@ package com.itheima01_Collections;
  */
 public class Test_02比较器排序 {
     public static void main(String[] args) {
-        System.out.println(sum(10, 20));
-        System.out.println(sum(10, 20, 30));
-    }
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(5);
+        list.add(4);
 
-    public static int sum(int... a) {
-        int sum = 0;
-        for(int i : a) {
-            sum += i;
-        }
-        return sum;
+        //获取一个Comparator实现类对象：匿名内部类
+        new Comparator<Integer>() {
+
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                //o1表示后面的数，o2是前面的数
+                System.out.println("o1" + o1 + ", o2" + o2);
+                return 0;
+            }
+        };
+
+        //调用含有比较器的排序功能
+        Comparator<Integer> c = new Comparator<Integer>() {
+            @Override
+            //o1:后面的数字
+            //o2:前面的数字
+            public int compare(Integer o1, Integer o2) {
+                //若想实现降序、升序排列，则需要重写return
+                //升序
+                return o1 - o2;
+                //降序
+                //return o2 - o1;
+            }
+        };
+
+        list.sort(c);
+        System.out.println(list);
     }
 }

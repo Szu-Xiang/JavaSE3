@@ -1,5 +1,8 @@
 package com.itheima02_Set;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 1.概述
 	java.util.Set接口继承自Collection接口，是单列集合的一个重要分支。
@@ -17,7 +20,15 @@ package com.itheima02_Set;
  */
 public class Test_01_Set入门 {
     public static void main(String[] args) {
+        //创建集合
+        HashSet<String> set = new HashSet<>();
 
+        //添加数据，会自动排序
+        set.add("d");
+        set.add("c");
+        set.add("b");
+        set.add("a");
 
+        System.out.println(set);
     }
 }

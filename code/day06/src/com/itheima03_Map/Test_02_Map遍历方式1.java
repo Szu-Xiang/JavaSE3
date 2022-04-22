@@ -1,5 +1,10 @@
 package com.itheima03_Map;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 /*
 1.概述
 	通过元素中的键，获取键所对应的值。
@@ -13,6 +18,23 @@ package com.itheima03_Map;
  */
 public class Test_02_Map遍历方式1 {
     public static void main(String[] args) {
+        //创建集合
+        Map<String, String> map = new HashMap<>();
 
+        //添加数据
+        map.put("张三","张三的媳妇");
+        map.put("李四","李四的媳妇");
+        map.put("王武","王武的媳妇");
+
+        //遍历1：键找对应值方式
+        //获取所有的键
+        Set<String> keys = map.keySet();
+        for (String key : keys) {
+            //获取键所对应的值
+            String value = map.get(key);
+
+            //打印结果
+            System.out.println(key + " " + value);
+        }
     }
 }

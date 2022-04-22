@@ -1,5 +1,9 @@
 package com.itheima01_Collections;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /*
 1.概述
 	java.utils.Collections是集合工具类，用来对集合进行操作。
@@ -11,6 +15,15 @@ package com.itheima01_Collections;
  */
 public class Test_01_常用功能 {
     public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        System.out.println("操作前： " + list);
 
+        Collections.shuffle(list);
+        System.out.println("打乱后： " + list);
     }
 }

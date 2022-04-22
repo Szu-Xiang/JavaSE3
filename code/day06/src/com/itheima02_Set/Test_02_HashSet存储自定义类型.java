@@ -1,5 +1,7 @@
 package com.itheima02_Set;
 
+import java.util.HashSet;
+
 /*
 1.概述
 	java.util.HashSet是Set接口的一个实现类,底层的实现其实是一个java.util.HashMap支持
@@ -9,7 +11,7 @@ package com.itheima02_Set;
 2.特点：元素无索引,元素存取无序,元素不可重复(唯一)
 3.元素唯一原理
 	根据hashCode值是否相同决定存储的列(相同则一列)
-	根据equals是否相同判断是否已存在(hascCode不同，元素一定不同，hashCode相同，元素有可能不同)
+	根据equals是否相同判断是否已存在(hashCode不同，元素一定不同，hashCode相同，元素有可能不同)
 	见《哈希表流程图》。
 4.使用方式
 	存储对象默认使用继承自Object类中的hashCode方法和equals方法的比较结果实现去重存储(默认根据地址值存储)。
@@ -17,6 +19,29 @@ package com.itheima02_Set;
  */
 public class Test_02_HashSet存储自定义类型 {
     public static void main(String[] args) {
+
+        //hashCode相同，但内容不同
+//        System.out.println("Aa".hashCode());
+//        System.out.println("BB".hashCode());
+
+        HashSet<StudentToHashSet> hs = new HashSet<>();
+        //创建对象
+        StudentToHashSet s1 = new StudentToHashSet("张三", 18);
+        StudentToHashSet s2 = new StudentToHashSet("李四", 20);
+        StudentToHashSet s3 = new StudentToHashSet("李四", 20);
+        StudentToHashSet s4 = new StudentToHashSet("李四", 23);
+
+        //添加数据
+        hs.add(s1);
+        hs.add(s2);
+        hs.add(s3);
+        hs.add(s4);
+
+        //遍历集合，查看数据
+        for (StudentToHashSet h : hs) {
+            System.out.println(h);
+        }
+
 
     }
 }
