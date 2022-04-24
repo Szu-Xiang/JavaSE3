@@ -1,5 +1,11 @@
 package com.itheima02_异常;
 
+import com.sun.xml.internal.ws.api.server.SDDocumentFilter;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /*
 1.概述
 	处理异常的方式，在方法内通过try...catch捕获方法中存在的一个或多个问题标识,即由编码者自己处理。
@@ -29,8 +35,34 @@ package com.itheima02_异常;
 需求:过除数为0异常和日期解析异常演示基本使用
 
  */
-public class Test_04捕获异常_基本使用 {
+public class    Test_04捕获异常_基本使用 {
     public static void main(String[] args) {
+        System.out.println("开始");
 
+        //运行时异常，触发程序就会停止
+        //需求：异常产生后，给用户处理方法，并让程序继续执行
+        //System.out.println(10 / 0);
+
+        try {
+            System.out.println(10 / 0);
+
+        } catch (ArithmeticException e) {
+            System.out.println("您的除数为0，请修改内容");
+        }
+
+        System.out.println("结束");
+    }
+
+    public void method() {
+        String time = "2000-12-12";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date parse = null;
+        try {
+            parse = sdf.parse(time);
+            System.out.println(parse);
+        } catch (ParseException e) {
+            System.out.println("您提供的日期有误");
+        }
     }
 }

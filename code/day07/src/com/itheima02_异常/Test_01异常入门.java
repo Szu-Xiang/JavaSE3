@@ -24,7 +24,8 @@ public class Test_01异常入门 {
         //定义数组
         int[] arr = {1, 2, 3};
         //调用方法，获取元素
-        int ele = getElement(arr, 3);
+        int ele = getElement(arr, 2);
+        System.out.println(ele);
     }
 
     public static int getElement(int[] arr, int index) {

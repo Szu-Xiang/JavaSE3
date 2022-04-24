@@ -27,5 +27,50 @@ package com.itheima03_多线程入门;
 public class Test_02三种实现方式 {
     public static void main(String[] args) {
 
+//        //用Thread子类对象创建线程
+//        MyThread mt = new MyThread();
+//        //修改线程名
+//        mt.setName("子线程");
+//        //启动线程
+//        mt.start();
+
+//        //创建定义Runnable接口的Runnable实现类对象
+//        MyRunnable mr = new MyRunnable();
+//        //创建线程对象
+//        Thread t = new Thread(mr,"子线程:");
+//        //启动
+//        t.start();
+
+        //创建Runnable匿名内部类对象
+        Runnable r = new Runnable() {
+
+            @Override
+            public void run() {
+                for (int i = 0; i < 100; i++) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(Thread.currentThread().getName() + ":" + i);
+                }
+            }
+        };
+
+        //创建线程对象
+        Thread t = new Thread(r,"子线程");
+        t.start();
+
+        //主线程main
+        for (int i = 0; i < 100; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(Thread.currentThread().getName() + ":" +i);
+            }
+
+        }
     }
-}
+

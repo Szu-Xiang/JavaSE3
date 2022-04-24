@@ -1,5 +1,7 @@
 package com.itheima02_异常;
 
+import java.text.ParseException;
+
 /*
 1.概述
 	处理异常的方式，在方法上声明方法中存在的一个或多个问题标识，提醒调用者处理这些异常
@@ -13,7 +15,8 @@ package com.itheima02_异常;
 需求:通过除数为0异常和日期解析异常，演示thorws的使用
  */
 public class Test_03声明异常 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
+
 
     }
 }

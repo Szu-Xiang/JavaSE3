@@ -37,7 +37,27 @@ package com.itheima03_多线程入门;
 
 */
 public class Test_01Thread基本使用 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
+//        Thread t = new Thread();
+//        t.start();
+
+        //直接使用Thread类创建对象无任何意义，因为没有重写run方法
+        //Thread t2 = new Thread("zixiancheng");
+
+        //public static Thread currentThread()  :返回对当前正在执行的线程对象的引用
+        Thread t = Thread.currentThread();
+        System.out.println(t.getName());
+        //public void run():此线程要执行的任务在此处定义代码
+
+        //start用于启动线程，run方法是启动线程后，线程中要执行的操作
+        t.run();
+
+        //public static void sleep(long millis):使当前正在执行的线程以指定的毫秒数暂停执行
+        System.out.println("三秒后继续执行");
+        Thread.sleep(3000);
+        System.out.println("结束");
+
 
     }
 }
