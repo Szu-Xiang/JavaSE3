@@ -19,6 +19,7 @@ public class Test {
         showFly(new Flyable() {
             @Override
             public void fly() {
+
                 System.out.println("luoxuanqifei");
             }
         });
