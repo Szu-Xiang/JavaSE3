@@ -49,6 +49,7 @@ public class Test_03泛型通配符 {
         list4 = listFu;
         list4 = listZi;
 
+
     }
 
     public static void show (ArrayList<? super Zi> list) {
