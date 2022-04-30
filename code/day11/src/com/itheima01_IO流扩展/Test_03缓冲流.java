@@ -1,5 +1,7 @@
 package com.itheima01_IO流扩展;
 
+import java.io.*;
+
 /*
 缓冲流概述
     1.介绍
@@ -27,7 +29,23 @@ package com.itheima01_IO流扩展;
 
  */
  public  class Test_03缓冲流 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("/Users/gouhaoxiang/JavaSE2/code/day11/src/a.txt"));
+
+        String s = null;
+        while ((s = br.readLine()) != null) {
+            System.out.println(s);
+        }
+        br.close();
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter("/Users/gouhaoxiang/JavaSE2/code/day11/src/b.txt"));
+        bw.write("你");
+        bw.newLine();
+        bw.write("好");
+        bw.newLine();
+        bw.write("啊");
+
+        bw.close();
 
     }
 }

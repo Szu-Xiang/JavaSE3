@@ -1,5 +1,8 @@
 package com.itheima01_IO流扩展;
 
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+
 /*
 1.概述
 	java.io.PrintStream类，该类能够方便地打印各种数据，是一种便捷的输出方式。
@@ -14,8 +17,10 @@ package com.itheima01_IO流扩展;
 需求:利用打印流，将数据输出到指定文本文件中。
  */
  public  class Test_07打印流 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        PrintStream ps = new PrintStream("/Users/gouhaoxiang/JavaSE2/code/day11/src/a.txt");
 
+        ps.println("你好");
 
     }
 }

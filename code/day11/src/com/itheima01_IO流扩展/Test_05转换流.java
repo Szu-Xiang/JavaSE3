@@ -1,5 +1,6 @@
 package com.itheima01_IO流扩展;
 
+import java.io.*;
 import java.util.Arrays;
 
 /*
@@ -39,19 +40,36 @@ import java.util.Arrays;
  */
  public  class Test_05转换流 {
     public static void main(String[] args) throws Exception {
-        //不同码表存储中文的字节个数不同
-        System.out.println("你-->UTF-8：" + "你".getBytes("UTF-8").length);
-        System.out.println("你-->UTF-8：" + Arrays.toString("你".getBytes("UTF-8")));
-        System.out.println("你-->UTF-8：" + Integer.toBinaryString("你".getBytes("UTF-8")[0]));//11100100
-        System.out.println("你-->UTF-8：" + Integer.toBinaryString("你".getBytes("UTF-8")[1]));//10111101
-        System.out.println("你-->UTF-8：" + Integer.toBinaryString("你".getBytes("UTF-8")[2]));//10100000
-        //1110"0100"-->"0100" 10"111101"-->"111101" 10"100000"-->"100000"
-        //"0100" "111101" "100000" -->"0100" "1111" "0110" "0000"
-        // "0100":4 "1111":f "0110":6 "0000":0 -->  4f60行 0列
-        System.out.println("你-->GBK：" + "你".getBytes("GBK").length);
-        System.out.println("你-->GBK：" + Arrays.toString("你".getBytes("GBK")));
-        System.out.println("你-->GBK：" + Integer.toBinaryString("你".getBytes("GBK")[0]));//11000100
-        System.out.println("你-->GBK：" + Integer.toBinaryString("你".getBytes("GBK")[1]));//11100011
-        //1100:C 0100:4 1110:E 0011:3-->C4区E行3列
+//        //不同码表存储中文的字节个数不同
+//        System.out.println("你-->UTF-8：" + "你".getBytes("UTF-8").length);
+//        System.out.println("你-->UTF-8：" + Arrays.toString("你".getBytes("UTF-8")));
+//        System.out.println("你-->UTF-8：" + Integer.toBinaryString("你".getBytes("UTF-8")[0]));//11100100
+//        System.out.println("你-->UTF-8：" + Integer.toBinaryString("你".getBytes("UTF-8")[1]));//10111101
+//        System.out.println("你-->UTF-8：" + Integer.toBinaryString("你".getBytes("UTF-8")[2]));//10100000
+//        //1110"0100"-->"0100" 10"111101"-->"111101" 10"100000"-->"100000"
+//        //"0100" "111101" "100000" -->"0100" "1111" "0110" "0000"
+//        // "0100":4 "1111":f "0110":6 "0000":0 -->  4f60行 0列
+//        System.out.println("你-->GBK：" + "你".getBytes("GBK").length);
+//        System.out.println("你-->GBK：" + Arrays.toString("你".getBytes("GBK")));
+//        System.out.println("你-->GBK：" + Integer.toBinaryString("你".getBytes("GBK")[0]));//11000100
+//        System.out.println("你-->GBK：" + Integer.toBinaryString("你".getBytes("GBK")[1]));//11100011
+//        //1100:C 0100:4 1110:E 0011:3-->C4区E行3列
+
+        //以GBK转换为utf-8
+
+        //用GBK读数据
+        InputStreamReader is = new InputStreamReader(new FileInputStream("/Users/gouhaoxiang/JavaSE2/code/day11/src/GBKcontent.txt"),"gbk");
+
+        OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("/Users/gouhaoxiang/JavaSE2/code/day11/src/UTF-8content.txt"), "utf8");
+
+        int ch = -1;
+        while ((ch = is.read()) != -1) {
+            osw.write(ch);
+        }
+
+        osw.close();
+        is.close();
+
+
     }
 }

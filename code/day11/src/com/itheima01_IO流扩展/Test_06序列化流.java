@@ -1,6 +1,6 @@
 package com.itheima01_IO流扩展;
 
-import java.io.IOException;
+import java.io.*;
 
 /*
 序列化概述
@@ -40,6 +40,32 @@ import java.io.IOException;
  */
  public  class Test_06序列化流{
     public static void main(String[] args) throws IOException, ClassNotFoundException {
+        //序列化流
+        //1.概述
+        //java.io.ObjectOutputStream类(序列化流)，将Java对象的原始数据类型写出到文件,实现对象的持久存储。
+        //2.构造方法
+        //public ObjectOutputStream(OutputStream out) ： 创建一个指定序列化流对象，需要传入一个字节输出流对象。
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("/Users/gouhaoxiang/JavaSE2/code/day11/src/student.txt"));
+        Student s = new Student();
+        s.age = 18;
+        s.name = "张三";
+        oos.writeObject(s);
+        oos.close();
+        //3.常用方法
+        //public final void writeObject (Object obj) : 将指定的对象以字节方式写出到指定文件中。
 
+
+        //反序列化流
+        //1.概述
+        //ObjectInputStream类(反序列化流)，将使用ObjectOutputStream序列化的原始数据恢复为对象。
+        //2.构造方法
+        //public ObjectInputStream(InputStream in) ： 创建一个指定反序列化流对象，需要传入一个字节输入流对象。
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/Users/gouhaoxiang/JavaSE2/code/day11/src/student.txt"));
+        //3.常用方法
+        //public final Object readObject () : 从指定的路径，读取一个对象的字节数据，并返回该对象。。
+        Object o = ois.readObject();
+        Student s2 = (Student) o;
+        System.out.println(s2);
+        ois.close();
     }
 }

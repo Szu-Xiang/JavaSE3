@@ -1,4 +1,7 @@
-package com.itheima_01装饰者设计模式;
+package com.itheima02_装饰者设计模式;
+
+import com.itheima02_装饰者设计模式.LiuDeHua;
+import com.itheima02_装饰者设计模式.LiuDeHuaWrapper;
 
 /*
 概述
@@ -22,6 +25,11 @@ package com.itheima_01装饰者设计模式;
  */
  public  class Test_装饰者设计模式 {
     public static void main(String[] args) {
+        LiuDeHua ldh = new LiuDeHua();
+        LiuDeHuaWrapper ldhw = new LiuDeHuaWrapper(ldh);
+
+        ldhw.sing();
+        ldhw.dance();
 
     }
 }
