@@ -1,5 +1,11 @@
 package com.itheima_03IO流;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Arrays;
+
 /*
 1.介绍
 	java.io.InputStream抽象类表示字节输入流所有类的超类，规定了读取字节信息到内存的共性方法。
@@ -15,7 +21,25 @@ package com.itheima_03IO流;
 需求:演示字节输入流读取文件内容。
  */
  public  class Test_04字节输入流基本使用 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        FileInputStream fis = new FileInputStream("code/day10/resource/demo1/c.txt");
+
+//        System.out.println((char) fis.read());
+//        System.out.println((char) fis.read());
+//        System.out.println((char) fis.read());
+//        System.out.println((char) fis.read());
+
+//        int by = -1;
+//        while ((by = fis.read()) != -1) {
+//            System.out.println((char) by);
+//        }
+        //fis.close();
+
+        //public int read(byte[] b):从输入流中读取一些字节数，并将它们存储到字节数组b中节。
+        byte[] bys = new byte[2];
+        int len = fis.read(bys);
+        System.out.println(len);
+        System.out.println(Arrays.toString(bys));
 
     }
 }

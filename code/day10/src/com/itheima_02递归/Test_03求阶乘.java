@@ -12,6 +12,14 @@ package com.itheima_02递归;
  */
  public  class Test_03求阶乘 {
     public static void main(String[] args) {
-
+        int result = multi(5);
+        System.out.println(result);
+    }
+    public static int multi(int a) {
+        if(a == 1) {
+            return 1;
+        } else {
+            return a * multi(a - 1);
+        }
     }
 }

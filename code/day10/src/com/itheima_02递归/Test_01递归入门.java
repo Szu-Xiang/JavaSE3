@@ -9,11 +9,21 @@ package com.itheima_02递归;
         public static void 方法名(形参){
             方法名(实参);
         }
-需求:控制一个方法重复执行1000次
+需求:控制一个方法重复执行10次
 
  */
 public class Test_01递归入门 {
     public static void main(String[] args) {
+        method1(10);
+    }
+
+    public static void method1(int a) {
+
+        System.out.println("递归调用");
+        if(a == 0) {
+            return;
+        }
+        method1((a - 1));
     }
 
 }

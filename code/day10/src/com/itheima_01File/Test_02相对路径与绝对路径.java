@@ -1,5 +1,7 @@
 package com.itheima_01File;
 
+import java.io.File;
+
 /*
 1.获取绝对路径
 	public String getAbsolutePath():返回此File的绝对路径名字符串
@@ -15,5 +17,17 @@ package com.itheima_01File;
  public  class Test_02相对路径与绝对路径 {
     public static void main(String[] args) {
 
+        //相对性: Java中 一般相对路径是相对于项目路径
+
+        //项目路径的上一级路径
+        File f1 = new File("..\\");
+        System.out.println(f1.getAbsolutePath());
+
+        //项目路径的当前路径
+        File f2 = new File("");
+        System.out.println(f2.getAbsolutePath());
+
+        //绝对路径
+        File f5 = new File("/Users/gouhaoxiang/JavaSE2");
     }
 }

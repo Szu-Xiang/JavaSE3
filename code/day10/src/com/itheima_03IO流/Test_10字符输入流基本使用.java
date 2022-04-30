@@ -1,5 +1,10 @@
 package com.itheima_03IO流;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
+
 /*
 1.介绍
 	java.io.Reader抽象类表示字符输入流所有类的超类，规定了读取字符信息到内存的共性方法。
@@ -15,7 +20,19 @@ package com.itheima_03IO流;
 需求:演示字符输入流读取文件内容。
  */
  public  class Test_10字符输入流基本使用 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        FileReader fr = new FileReader("code/day10/resource/demo1/d.txt");
+
+        int ch = -1;
+        while ((ch = fr.read()) != -1) {
+            System.out.println((char) ch);
+        }
+        fr.close();
+
+        FileReader fr2 = new FileReader("code/day10/resource/demo1/d.txt");
+        char[] chs = new char[2];
+        int len = fr2.read(chs);
+        System.out.println(Arrays.toString(chs));
 
     }
 }

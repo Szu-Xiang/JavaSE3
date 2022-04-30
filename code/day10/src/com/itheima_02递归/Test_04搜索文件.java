@@ -15,7 +15,32 @@ import java.io.File;
 */
 public class Test_04搜索文件 {
     public static void main(String[] args) {
-        File f = new File("day10");
+        File f = new File("/Users/gouhaoxiang/JavaSE2/code/day10");
+        findFile(f);
     }
 
+    public static void findFile(File f) {
+
+        File[] files = null;
+        if (f != null && f.isDirectory()) {
+            //获取目录下所有的目录和路径
+            files = f.listFiles();
+        } else {
+            return;
+        }
+        //遍历所有路径名
+        assert files != null;
+        for (File file : files) {
+            //判断如果是目录，则递归调用，如果以java结尾，则打印
+            if (file.isDirectory()) {
+                //如果是目录，则再进入该目录查找文件
+                findFile(file);
+                //如果不是目录，且结尾以.java形式，则输出该文件的路径
+            } else if (file.isFile() && file.getName().endsWith(".java")) {
+                System.out.println(file.getAbsolutePath());
+            }
+        }
+
+
+    }
 }

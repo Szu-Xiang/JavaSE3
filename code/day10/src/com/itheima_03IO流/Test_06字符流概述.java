@@ -1,5 +1,8 @@
 package com.itheima_03IO流;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 /*
@@ -18,8 +21,15 @@ import java.io.UnsupportedEncodingException;
 需求:演示字节流读取字符内容并展示过程中的问题。
  */
  public  class Test_06字符流概述 {
-    public static void main(String[] args) throws UnsupportedEncodingException {
+    public static void main(String[] args) throws IOException {
+        //使用字节流读取中文数据
+        FileInputStream fis = new FileInputStream("code/day10/resource/demo1/c.txt");
 
+        //数组读取
+        int len = -1;
+        byte[] bys = new byte[4];
+        len = fis.read(bys);
+        System.out.println(new String(bys,0,len));//输出乱码
 
     }
 }

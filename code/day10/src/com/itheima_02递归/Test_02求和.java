@@ -11,6 +11,15 @@ package com.itheima_02递归;
  */
  public  class Test_02求和 {
     public static void main(String[] args) {
+        int result = sum(4);
+        System.out.println(result);
+    }
+    public static int sum(int a) {
+        if(a == 1) {
+            return a;
+        } else {
+            return a + sum(a - 1);
+        }
 
     }
 }

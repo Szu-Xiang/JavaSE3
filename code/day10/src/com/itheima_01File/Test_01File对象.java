@@ -1,5 +1,7 @@
 package com.itheima_01File;
 
+import java.io.File;
+
 /*
 1.概述
 	java.io.File 是文件和目录路径名的抽象表示，主要用于文件和目录的创建、查找、修改、删除等操作。
@@ -12,6 +14,14 @@ package com.itheima_01File;
  */
  public  class Test_01File对象 {
     public static void main(String[] args) {
+        File f1 = new File("/Users/gouhaoxiang/JavaSE2/code/day10/src/com/itheima_01File");
+
+        System.out.println(f1);
+
+        String p = "/Users/gouhaoxiang/JavaSE2/code/day10/src/com";
+        File f2 = new File(p, "itheima_01File");
+        System.out.println(f2);
+
 
     }
 }

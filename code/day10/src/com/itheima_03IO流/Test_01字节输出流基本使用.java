@@ -1,5 +1,10 @@
 package com.itheima_03IO流;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /*
 IO流概述
     1.概述
@@ -15,7 +20,7 @@ IO流概述
      		字符流 ：以字符为单位，读写数据的流。
     3.IO流顶层接口
     	字节流: 字节输入流(InputStream)   字节输出流(OutputStream)
-    	字符流：字符输入流(Reader)        字符输出流(Writer)
+    	字符流: 字符输入流(Reader)        字符输出流(Writer)
 字节流概述
     1.一切皆字节
     	一切文件数据(文本、图片、视频等)存储时，都是以一个个字节(二进制)形式保存，传输时也一样
@@ -45,7 +50,20 @@ IO流概述
 需求:演示字节输出流的基本使用。
  */
  public  class Test_01字节输出流基本使用 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        File f = new File("/Users/gouhaoxiang/JavaSE2/code/day10/resource/demo1/b.txt");
+        FileOutputStream fos = new FileOutputStream(f);
 
+        //public void write(int b)：将指定的字节写入此输出流。
+        fos.write(97);
+        fos.write(98);
+        fos.write(99);
+
+        //public void write(byte[] b)：将 b.length字节从指定的字节数组写入此输出流。
+        byte[] bys = {100,101,102};
+        fos.write(bys);
+
+        //public void write(byte[] b, int off, int len)：从指定字节数组,按照偏移量写入len个字节。
+        fos.write(bys,0,2);
     }
 }

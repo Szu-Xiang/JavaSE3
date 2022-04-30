@@ -1,6 +1,7 @@
 package com.itheima_01File;
 
 import java.io.File;
+import java.io.IOException;
 
 /*
 1.创建功能
@@ -21,10 +22,9 @@ import java.io.File;
 需求:演示相对路径，演示File类中的方法。
  */
  public  class Test_03File常用方法 {
-    public static void main(String[] args) {
-        File f = new File("day10\\src\\image.jpg");
-        System.out.println(f.length());
-        File f2 = new File("D:\\test2");
-        System.out.println(f2.length());
+    public static void main(String[] args) throws IOException {
+        File f1 = new File("com/itheima_01File/b.txt");
+
+        System.out.println(f1.createNewFile());
     }
 }

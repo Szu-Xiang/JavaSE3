@@ -1,5 +1,7 @@
 package com.itheima_03IO流;
 
+import java.io.*;
+
 /*
 1.需求:
 	将已存在的图片，从一个目录中，复制到另一个目录中。
@@ -12,7 +14,27 @@ package com.itheima_03IO流;
 
  */
  public  class Test_05复制图片 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        //源路径
+        File srcFile = new File("/Users/gouhaoxiang/JavaSE2/code/day10/resource/image.jpg");
+        //输入流
+        FileInputStream fis = new FileInputStream(srcFile);
+
+        //目的地路径
+        File descFile = new File("/Users/gouhaoxiang/JavaSE2/code/day10/resource/demo1/image.jpg");
+        descFile.createNewFile();
+        //输出流
+        FileOutputStream fos = new FileOutputStream(descFile);
+
+        int len = -1;
+        byte[] bys = new byte[1024];
+
+        while ((len = fis.read(bys)) != -1) {
+            fos.write(bys,0,len);
+        }
+
+        fos.close();
+        fis.close();
 
     }
 }
