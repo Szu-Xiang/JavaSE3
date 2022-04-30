@@ -11,7 +11,7 @@ import java.util.HashSet;
 2.特点：元素无索引,元素存取无序,元素不可重复(唯一)
 3.元素唯一原理
 	根据hashCode值是否相同决定存储的列(相同则一列)
-	根据equals是否相同判断是否已存在(hashCode不同，元素一定不同，hashCode相同，元素有可能不同)
+	根据元equals是否相同判断是否已存在(hashCode不同，元素一定不同，hashCode相同，素有可能不同)
 	见《哈希表流程图》。
 4.使用方式
 	存储对象默认使用继承自Object类中的hashCode方法和equals方法的比较结果实现去重存储(默认根据地址值存储)。

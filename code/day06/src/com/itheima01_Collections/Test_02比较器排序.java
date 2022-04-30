@@ -47,9 +47,9 @@ public class Test_02比较器排序 {
             public int compare(Integer o1, Integer o2) {
                 //若想实现降序、升序排列，则需要重写return
                 //升序
-                return o1 - o2;
+                //return o1 - o2;
                 //降序
-                //return o2 - o1;
+                return o2 - o1;
             }
         };
 

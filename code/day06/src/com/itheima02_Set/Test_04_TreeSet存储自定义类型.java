@@ -18,7 +18,7 @@ import java.util.TreeSet;
 public class Test_04_TreeSet存储自定义类型 {
     public static void main(String[] args)   {
         //自然排序实现
-        //method1();
+        method1();
 
         //比较器排序
         Comparator c = new Comparator<StudentToTreeSet2>() {
@@ -72,5 +72,8 @@ public class Test_04_TreeSet存储自定义类型 {
         for (StudentToTreeSet1 t : ts) {
             System.out.println(t);
         }
+
+        System.out.println();
+
     }
 }

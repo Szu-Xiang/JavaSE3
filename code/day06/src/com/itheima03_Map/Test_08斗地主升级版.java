@@ -35,7 +35,7 @@ public class Test_08斗地主升级版 {
             造牌
          */
         //牌盒
-        HashMap<Integer,String> pokerBox = new HashMap<>();
+        HashMap<Integer, String> pokerBox = new HashMap<>();
         //牌号
         ArrayList<Integer> pokerNum = new ArrayList<>();
         //造牌并将牌号添加到牌盒中

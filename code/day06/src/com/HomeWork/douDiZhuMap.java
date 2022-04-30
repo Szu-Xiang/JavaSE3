@@ -52,13 +52,13 @@ public class douDiZhuMap {
         //通过循环嵌套，组合出所有的牌，并将牌放入到牌盒中
         for (String num : nums) {
             for (String color : colors) {
-                String poker = num + color;
+                String poker = color + num;
 
                 pokerNums.add(index);
                 pokerBox.put(index--,poker);
             }
         }
-//        System.out.println(pokerBox);
+        System.out.println(pokerBox);
 
         //洗牌(洗的是牌号)
         Collections.shuffle(pokerNums);
