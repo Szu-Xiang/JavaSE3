@@ -12,7 +12,12 @@ package com.itheima01_线程状态;
 		public void notify()  唤醒当前锁对象上等待状态的线程.
 */
 public class Test_01等待唤醒 {
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("开始");
+        Object lock = new Object();
+        synchronized (lock) {
+            lock.wait(2000);
+            System.out.println("结束");
+        }
     }
 }

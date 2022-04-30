@@ -1,5 +1,10 @@
 package com.itheima02_Lambda;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 /*
 1.前提
 	必须具有接口，且要求接口中有且仅有一个抽象方法。
@@ -15,6 +20,15 @@ package com.itheima02_Lambda;
 */
 public class Test_02_Lambda标准格式 {
     public static void main(String[] args) {
+
+        List<Integer> list = new ArrayList<>();
+
+        list.add(10);
+        list.add(30);
+        list.add(20);
+        Collections.sort(list, Comparator.comparingInt((Integer i) -> i));
+
+        System.out.println(list);
 
     }
 }

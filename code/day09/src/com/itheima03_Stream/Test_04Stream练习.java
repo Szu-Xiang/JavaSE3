@@ -1,5 +1,9 @@
 package com.itheima03_Stream;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
 /*
 1.需求:
 	定义两个ArrayList集合，存储两组姓名，根据如下要求，刷选最终数据。
@@ -17,7 +21,39 @@ package com.itheima03_Stream;
 */
 public class Test_04Stream练习 {
     public static void main(String[] args) {
+        List<String> one = new ArrayList<>();
+        List<String> two = new ArrayList<>();
 
+        Stream<String> s11 = one.stream();
+
+        Stream<String> s12 = s11.filter((String s) -> {
+            return s.length() == 3;
+        });
+
+        //筛选前两个
+        Stream<String> s13 = s12.limit(2);
+
+        Stream<String> s21 = two.stream();
+        Stream<String> s22 = s21.filter((String s) -> {
+            return s.startsWith("张");
+        });
+
+        //不要前两个
+        Stream<String> s23 = s22.skip(2);
+
+        Stream<String> allNames = Stream.concat(s13, s23);
+
+        //根据姓名创建Person对象并存储到集合；
+        Stream<Person> personStream = allNames.map((String s) -> {
+            return new Person(s);
+        });
+
+        personStream.forEach((Person p) -> {
+            System.out.println(p);
+        });
+
+        //链式编程
+        //Stream.concat();
     }
 }
 

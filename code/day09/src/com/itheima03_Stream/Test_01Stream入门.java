@@ -1,5 +1,9 @@
 package com.itheima03_Stream;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
 /*
 1.概述
 	JDK8中为了支持Lambda，制作了一些应用,Stream就是一个典型的应用。
@@ -23,6 +27,34 @@ package com.itheima03_Stream;
 */
 public class Test_01Stream入门 {
     public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("周润发");
+        list.add("周星驰");
+        list.add("成龙");
+        list.add("谢霆锋");
+        list.add("古天乐");
+        list.add("吴京");
+        list.add("梅西");
+
+        //过滤到一个集合中
+        List<String> listOne = new ArrayList<>();
+        for (String name : list) {
+            if(name.length() == 3) {
+                listOne.add(name);
+            }
+        }
+
+//        Stream<String> s1 = list.stream();
+//        Stream<String> s2 = s1.filter((String s) -> {
+//            return s.length() == 3;
+//        });
+//        Stream<String> s3 = s2.limit(3);
+//
+//        s3.forEach((String s) -> {
+//            System.out.println(s);
+//        });
+
+        list.stream().filter(s -> s.length() == 3).limit(3).forEach(s -> System.out.println(s));
 
     }
 }

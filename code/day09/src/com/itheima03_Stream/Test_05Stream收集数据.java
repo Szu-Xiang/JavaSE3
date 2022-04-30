@@ -1,5 +1,12 @@
 package com.itheima03_Stream;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 /*
 1.概述：
     对流操作完成之后，如果需要将其结果进行收集,可以根据需要收集到集合和数组中。
@@ -15,6 +22,18 @@ package com.itheima03_Stream;
 */
 public class Test_05Stream收集数据 {
     public static void main(String[] args) {
+        Stream<String> stream = Stream.of("a", "b", "c");
+        //收集到集合中
+        Object[] arr = stream.toArray();
+        System.out.println(Arrays.toString(arr));
+
+        Stream<String> stream2 = Stream.of("a", "b", "c");
+        //收集到list集合
+        List<String> list = stream2.collect(Collectors.toList());
+        System.out.println(list);
+        //收集到Set集合
+        Set<String> set = stream2.collect(Collectors.toSet());
+        System.out.println(set);
 
     }
 }
